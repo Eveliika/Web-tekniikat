@@ -1,0 +1,50 @@
+h1 {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+#main-heading, h1 + p {
+    color: green;
+}
+
+.purple {
+    color: purple;
+}
+
+h1 ~ p {
+    font-style: italic;
+}
+
+.highlight {
+    color: orange;
+    font-weight: bold;
+}
+
+div p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[required] {
+    border: 2px solid black;
+}
+
+input:focus {
+    border-color: red;
+}
+
+p:hover {
+    font-size: 1.2em;
+}
+
+/*Valitsee kaikki luokat joissa sana article*/
+[class*="article"] {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*Valitsee kaikki luokat joiden alussa sana article*/
+[class^="article"] {
+    font-weight: bold;
+}
