@@ -1,0 +1,173 @@
+$theme-color: #c9ad7f;
+$box-shadow: 6px 4px 22px -3px #a18b66b6;
+
+
+@mixin theme ($theme: #c9ad7fb6 ) {
+    background-color: $theme;
+    color: #ffff;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    
+}
+
+body {
+    background-color: #f8eee1;
+}
+
+
+/*Banneri*/
+#bg-image {
+    background-image: url("../../images/helsinki.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+
+h1 {
+    padding-top: 5%;
+    font-size: 12em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.706);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/*Navbar*/
+.navbar {
+    background-color: $theme-color;
+    border-radius: 2px;
+
+}
+
+.navbar-toggler {
+    border-radius: 20px;
+}
+
+
+/*Tietoja-sivun pääsisältö*/
+.container {
+    margin-bottom: 45px;
+}
+
+.text-content {
+    padding: 30px 15px 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    @include theme;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: $box-shadow;
+}
+
+a {
+    text-decoration: none;
+    color: #6b4c1a;
+    &:hover {
+        color: #9c7536;
+    }
+}
+
+
+/*Accordion*/
+.accordion-button {
+    @include theme;
+    height: 70px;
+    box-shadow: $box-shadow;
+    &:not(.collapsed) {
+        background-color: #decfac;
+        color: #ffff;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+#accordionExample {
+    padding: 30px 0px 30px 15px;
+}
+
+.accordion-item {
+    border: none;
+    background-color: rgb(255, 249, 241);
+    &:nth-child(1), &:nth-child(2) {
+        border-bottom: 1px solid #ffff;
+    }
+}
+
+.accordion {
+    table {
+        color: #b39970;
+        th {
+            padding-right: 10px;
+        } 
+    }
+
+    li {
+        color: #b39970;
+    }
+}
+
+
+/*Alatunniste*/
+footer {
+    background-color: $theme-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+}
+
+label > span {
+    font-weight: bold;
+}
+
+/*Responsiivisuus*/
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 10em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .text-content {
+        padding: 30px 0px 20px 0px;
+    }
+
+    #accordionExample {
+        padding: 30px 0px 20px 0px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    h1 {
+        font-size: 7em;
+    }
+
+    #bg-image {
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    h1 {
+        font-size: 6em;
+        padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 4em;
+    }
+}
